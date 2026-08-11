@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>August '26 Gym Plan — Training Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EAE8E2;
+    --bg-card: #F6F5F1;
+    --ink: #1D2019;
+    --ink-soft: #4A4C43;
+    --muted: #57554A;
+    --line: #D3D0C6;
+    --accent: #2B57A3;
+    --accent-soft: rgba(43, 87, 163, 0.14);
+    --accent-warm: #B23B1E;
+    --accent-warm-soft: rgba(178, 59, 30, 0.10);
+    --radius: 6px;
+    --max: 660px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 20px 64px; }
+
+  /* ---------- header ---------- */
+
+  header{ padding: 6px 0 24px; }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  }
+  .eyebrow::before{
+    content: ""; width: 8px; height: 8px; background: var(--accent);
+    display: inline-block; border-radius: 1px;
+  }
+
+  h1{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: clamp(40px, 12vw, 62px);
+    line-height: 0.92; letter-spacing: 0.005em;
+    margin: 0 0 14px; text-transform: uppercase;
+  }
+
+  .sub{ font-size: 15px; color: var(--ink-soft); max-width: 48ch; margin: 0 0 22px; }
+  .sub b{ color: var(--ink); font-weight: 600; }
+
+  .focus-box{
+    border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--bg-card); padding: 16px 18px;
+  }
+  .focus-box h3{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .focus-list{
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr; gap: 7px;
+  }
+  @media (min-width: 480px){ .focus-list{ grid-template-columns: 1fr 1fr; gap: 7px 20px; } }
+  .focus-list li{
+    font-size: 13.5px; color: var(--ink-soft);
+    display: flex; gap: 9px; align-items: baseline;
+  }
+  .focus-list .fnum{
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    font-weight: 600; color: var(--accent); flex: none;
+  }
+  .focus-list li.has-detail{ color: var(--ink); font-weight: 500; }
+  .focus-list li.has-detail .fnum{ color: var(--accent); }
+
+  /* ---------- nav ---------- */
+
+  nav{
+    position: sticky; top: 0; z-index: 20;
+    margin: 26px 0 30px;
+    background: var(--bg);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  nav a{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--ink-soft); border: 1px solid var(--line);
+    border-radius: 3px; padding: 6px 10px; background: var(--bg-card);
+  }
+  nav a:hover{ border-color: var(--accent); color: var(--accent); }
+  nav a .n{ color: var(--muted); margin-left: 5px; }
+
+  /* ---------- section ---------- */
+
+  section{ scroll-margin-top: 62px; margin-bottom: 12px; }
+
+  .sec-head{
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 8px; margin-bottom: 22px;
+  }
+  .sec-head h2{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800; font-size: clamp(26px, 7vw, 36px);
+    line-height: 1; margin: 0; text-transform: uppercase;
+  }
+  .sec-head .count{
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    font-weight: 600; letter-spacing: 0.08em; color: var(--muted);
+    text-transform: uppercase; margin-left: auto; white-space: nowrap;
+  }
+
+  /* ---------- exercise card ---------- */
+
+  .card{
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius); margin-bottom: 24px; overflow: hidden;
+  }
+
+  .card-head{ padding: 18px 20px 15px; border-bottom: 1px solid var(--line); }
+
+  .tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 11px; }
+  .tag{
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 3px;
+    background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+  }
+  .tag.equip{ background: transparent; color: var(--muted); border: 1px solid var(--line); }
+
+  .card-head h3{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800; font-size: clamp(24px, 6.5vw, 31px);
+    line-height: 1; margin: 0; text-transform: uppercase; letter-spacing: 0.005em;
+  }
+  .num{ color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+
+  /* ---------- diagram ---------- */
+
+  .diagram{
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 23px, var(--line) 23px, var(--line) 24px);
+    background-color: #EFEDE7;
+    padding: 8px 4px 0; border-bottom: 1px solid var(--line);
+  }
+  .diagram svg{ display: block; width: 100%; height: auto; }
+  .pose-caption{
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    font-weight: 600; letter-spacing: 0.08em; fill: var(--muted); text-transform: uppercase;
+  }
+
+  /* ---------- dose ---------- */
+
+  .dose{
+    display: flex; flex-wrap: wrap; gap: 0;
+    border-bottom: 1px solid var(--line); background: rgba(43,87,163,0.045);
+  }
+  .dose div{
+    padding: 10px 16px; flex: 1 1 auto;
+    border-right: 1px solid var(--line);
+  }
+  .dose div:last-child{ border-right: none; }
+  .dose .dl{
+    display: block; font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px;
+  }
+  .dose .dv{ font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* ---------- steps ---------- */
+
+  .body-copy{ padding: 18px 20px 20px; }
+
+  .steps{ list-style: none; margin: 0 0 16px; padding: 0; counter-reset: step; }
+  .steps li{
+    counter-increment: step;
+    display: grid; grid-template-columns: 26px 1fr; gap: 12px;
+    padding: 9px 0; border-bottom: 1px dashed var(--line);
+    font-size: 14.5px; color: var(--ink-soft);
+  }
+  .steps li:last-child{ border-bottom: none; }
+  .steps li::before{
+    content: counter(step);
+    font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px;
+    color: var(--accent); background: var(--accent-soft);
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .tip{
+    display: grid; grid-template-columns: auto 1fr; gap: 10px;
+    background: var(--accent-warm-soft); border: 1px solid rgba(178,59,30,0.22);
+    border-radius: var(--radius); padding: 12px 14px;
+    font-size: 13.5px; color: var(--ink); margin-bottom: 14px;
+  }
+  .tip .tip-label{
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.08em; color: var(--accent-warm); text-transform: uppercase;
+    align-self: start; padding-top: 1px;
+  }
+  .tip p{ margin: 0; }
+
+  .watch{
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 3px;
+    padding: 8px 12px; background: transparent;
+  }
+  .watch:hover{ background: var(--accent); color: var(--bg-card); }
+  .watch:hover svg polygon{ fill: var(--bg-card); }
+  .watch svg{ flex: none; }
+
+  .xref{
+    font-size: 13px; color: var(--muted); margin: 0 0 14px;
+    font-style: italic;
+  }
+
+  /* ---------- also-in-plan ---------- */
+
+  .note-card{
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 18px 20px; margin-bottom: 18px;
+  }
+  .note-card h4{
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 800;
+    font-size: 24px; line-height: 1; margin: 0 0 4px; text-transform: uppercase;
+  }
+  .note-card p{ font-size: 14px; color: var(--ink-soft); margin: 0 0 12px; }
+  .note-card ul{ margin: 0 0 12px; padding-left: 18px; font-size: 14px; color: var(--ink-soft); }
+  .note-card li{ margin-bottom: 5px; }
+  .note-card p:last-child, .note-card ul:last-child{ margin-bottom: 0; }
+
+  /* ---------- footer ---------- */
+
+  footer{
+    margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase;
+  }
+
+  /* ---------- motion / a11y ---------- */
+
+  .card{ opacity: 0; transform: translateY(10px); animation: rise 0.45s ease-out forwards; }
+  @keyframes rise{ to{ opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce){
+    .card{ animation: none; opacity: 1; transform: none; }
+  }
+
+  a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media (min-width: 560px){ .wrap{ padding-top: 44px; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Training Reference · August '26</div>
+    <h1>Gym Plan<br>Update</h1>
+    <p class="sub">Shoulder and hip mobility, knee rehab, and core work. Legs are a <b>slow strengthening process</b>, weighted toward knee rehab. Start with the area you want to strengthen.</p>
+
+    <div class="focus-box">
+      <h3>Areas of focus</h3>
+      <ul class="focus-list">
+        <li><span class="fnum">01</span> Quality sleep</li>
+        <li><span class="fnum">02</span> Shoulder mobility</li>
+        <li class="has-detail"><span class="fnum">03</span> Knee strengthening</li>
+        <li class="has-detail"><span class="fnum">04</span> Hip mobility</li>
+        <li><span class="fnum">05</span> Core exercises</li>
+        <li><span class="fnum">06</span> Push</li>
+        <li><span class="fnum">07</span> Pull</li>
+        <li class="has-detail"><span class="fnum">08</span> Legs</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#knee">Knee / Quad<span class="n">3</span></a>
+    <a href="#hip">Hip<span class="n">7</span></a>
+    <a href="#glutes">Glutes<span class="n">2</span></a>
+    <a href="#rest">Rest of plan</a>
+  </nav>
+
+  <main>
+
+  <!-- ============ KNEE / QUADRICEP RELEASE ============ -->
+  <section id="knee">
+    <div class="sec-head">
+      <h2>Knee / Quad Release</h2>
+      <span class="count">3 exercises</span>
+    </div>
+
+    <!-- 1. Sit-Down Squat -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Quads</span>
+          <span class="tag">Knee rehab</span>
+          <span class="tag equip">Chair</span>
+          <span class="tag equip">Resistance band</span>
+        </div>
+        <h3><span class="num">01</span> Sit-Down Squat with Band</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing in front of a chair, then lowering under control to sit down on it">
+          <!-- POSE A: standing in front of chair -->
+          <line x1="40" y1="284" x2="270" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <!-- chair behind -->
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="185" y1="232" x2="248" y2="232"/>
+            <line x1="248" y1="232" x2="248" y2="152"/>
+            <line x1="190" y1="232" x2="190" y2="282"/>
+            <line x1="246" y1="232" x2="246" y2="282"/>
+          </g>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M148 160 L 145 222 L 147 278"/>
+            <path d="M147 278 L 125 282" stroke-width="5"/>
+            <path d="M148 160 L 145 96"/>
+            <path d="M145 100 L 100 108"/>
+            <circle cx="141" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <!-- band at knee -->
+          <path d="M137 220 L 153 224" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Start</text>
+
+          <!-- arrow -->
+          <path d="M290 140 C 326 158, 326 184, 296 200" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M296 200 L 285 193 M296 200 L 292 212" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: sitting down onto chair -->
+          <line x1="360" y1="284" x2="580" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="478" y1="232" x2="541" y2="232"/>
+            <line x1="541" y1="232" x2="541" y2="152"/>
+            <line x1="483" y1="232" x2="483" y2="282"/>
+            <line x1="539" y1="232" x2="539" y2="282"/>
+          </g>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- hip on seat, thigh forward, shin vertical -->
+            <path d="M488 228 L 434 231 L 436 278"/>
+            <path d="M436 278 L 414 282" stroke-width="5"/>
+            <!-- torso -->
+            <path d="M488 228 L 476 168"/>
+            <!-- arm forward -->
+            <path d="M476 172 L 431 180"/>
+            <circle cx="472" cy="146" r="21" fill="var(--bg-card)"/>
+          </g>
+          <path d="M426 228 L 442 232" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <text x="470" y="308" text-anchor="middle" class="pose-caption">Seated</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">8–12</span></div>
+        <div><span class="dl">Sets</span><span class="dv">3</span></div>
+        <div><span class="dl">Progression</span><span class="dv">+2 reps weekly</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Place your feet shoulder-width apart, or just outside it.</li>
+          <li>Tie a resistance band around your knees, kept quite tight.</li>
+          <li>Stand in front of a chair and slowly bend your knees.</li>
+          <li>Keep a good curve in your lower back and control the descent onto the chair.</li>
+          <li>To stand, push up through your legs and straighten your knees.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>The band's job is to stop your knees caving inward — push out against it the whole time. If there's no reaction after a week, add 2 reps.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/zmDmYRQpT-s" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 2. Split Squat -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Quads</span>
+          <span class="tag">Knee rehab</span>
+          <span class="tag">Single leg</span>
+          <span class="tag equip">Bodyweight</span>
+        </div>
+        <h3><span class="num">02</span> Split Squat</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Split stance standing, then dropping the back knee toward the ground with the front knee at 90 degrees">
+          <!-- POSE A -->
+          <line x1="50" y1="284" x2="270" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M150 160 L 176 220 L 179 278"/>
+            <path d="M179 278 L 200 282" stroke-width="5"/>
+            <path d="M150 160 L 127 222 L 118 278"/>
+            <path d="M118 278 L 138 282" stroke-width="5"/>
+            <path d="M150 160 L 149 96"/>
+            <path d="M149 100 L 153 152"/>
+            <circle cx="146" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Split stance</text>
+
+          <!-- arrow -->
+          <path d="M292 140 C 328 158, 328 184, 298 200" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M298 200 L 287 193 M298 200 L 294 212" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: back knee down, front shin vertical -->
+          <line x1="350" y1="284" x2="580" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <!-- vertical shin reference: knee stays over the ankle -->
+          <line x1="498" y1="228" x2="498" y2="286" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.6"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M452 214 L 498 236 L 498 278"/>
+            <path d="M498 278 L 519 282" stroke-width="5"/>
+            <path d="M452 214 L 416 268 L 390 282"/>
+            <path d="M390 282 L 378 273" stroke-width="5"/>
+            <path d="M452 214 L 451 150"/>
+            <path d="M451 154 L 455 206"/>
+            <circle cx="448" cy="126" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="450" y="308" text-anchor="middle" class="pose-caption">Back knee down</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">5 each leg</span></div>
+        <div><span class="dl">Progression</span><span class="dv">+1 rep weekly</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Take a step forwards, as if going into a lunge.</li>
+          <li>Drop the back knee towards the ground.</li>
+          <li>The front knee stays at 90 degrees and does not travel forward past that point.</li>
+          <li>Keep your knee stacked over the second ray of your foot — never let it drop inwards.</li>
+          <li>Push back up to the start position.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>Only add a rep each week if there's no adverse reaction from the knee. Alignment matters more than depth here.</p>
+        </div>
+        <a class="watch" href="http://youtu.be/MwFFJWRQDQM" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 3. Quad Stretch -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Quads</span>
+          <span class="tag">Stretch</span>
+          <span class="tag equip">Wall or chair</span>
+        </div>
+        <h3><span class="num">03</span> Quadriceps Stretch</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing holding a support, then pulling the heel up toward the buttock to stretch the front of the thigh">
+          <!-- POSE A -->
+          <line x1="50" y1="284" x2="280" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="232" y1="150" x2="232" y2="282"/>
+            <line x1="232" y1="232" x2="272" y2="232"/>
+          </g>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M148 160 L 146 222 L 148 278"/>
+            <path d="M148 278 L 168 282" stroke-width="5"/>
+            <path d="M148 160 L 146 96"/>
+            <path d="M146 100 L 228 148"/>
+            <circle cx="142" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Hold support</text>
+
+          <!-- arrow -->
+          <path d="M300 200 C 330 178, 330 152, 302 138" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M302 138 L 313 145 M302 138 L 306 126" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: heel pulled to bottom -->
+          <line x1="350" y1="284" x2="580" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="536" y1="150" x2="536" y2="282"/>
+            <line x1="536" y1="232" x2="576" y2="232"/>
+          </g>
+          <!-- stretch highlight on front of thigh -->
+          <ellipse cx="446" cy="196" rx="11" ry="33" fill="var(--accent-warm-soft)" stroke="none" transform="rotate(6 446 196)"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- standing leg -->
+            <path d="M452 160 L 454 222 L 456 278"/>
+            <path d="M456 278 L 476 282" stroke-width="5"/>
+            <!-- torso -->
+            <path d="M452 160 L 450 96"/>
+            <!-- arm on support -->
+            <path d="M450 100 L 532 148"/>
+            <circle cx="446" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <!-- bent leg: thigh down, shin folded up behind to the buttock -->
+          <g stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M452 160 L 442 234 L 420 178"/>
+            <path d="M420 178 L 406 170" stroke-width="5"/>
+          </g>
+          <!-- arm grabbing the foot -->
+          <path d="M450 100 L 418 172" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <text x="460" y="308" text-anchor="middle" class="pose-caption">Heel to bottom</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Hold</span><span class="dv">30 seconds</span></div>
+        <div><span class="dl">Reps</span><span class="dv">5</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Hold something sturdy — a wall, table or chair — if you're unsteady.</li>
+          <li>Tighten your stomach and buttock muscles.</li>
+          <li>Pull your foot up towards your bottom.</li>
+          <li>Hold the stretch, then swap sides.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>You should feel this on the front of the thigh — <b>not</b> as pain in the knee joint. You can also do this lying on your side.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/430IUQz6YP4" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ HIP STRENGTHENING ============ -->
+  <section id="hip">
+    <div class="sec-head">
+      <h2>Hip Strengthening</h2>
+      <span class="count">7 exercises</span>
+    </div>
+
+    <!-- 1. Clam Advanced with Band -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Glutes</span>
+          <span class="tag">Outer thigh</span>
+          <span class="tag">Hips</span>
+          <span class="tag equip">Resistance band</span>
+        </div>
+        <h3><span class="num">01</span> Clam Advanced with Band</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 170 600 148" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lying on your side with knees bent and feet lifted, then opening the top knee upward like a clam">
+          <!-- POSE A -->
+          <line x1="40" y1="286" x2="280" y2="286" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="76" cy="200" r="20" fill="var(--bg-card)"/>
+            <path d="M96 212 L 192 222"/>
+            <path d="M100 216 L 114 278"/>
+            <path d="M192 222 L 252 256 L 212 278"/>
+          </g>
+          <!-- band above the knees -->
+          <path d="M217 229 L 227 249" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <!-- feet held off the floor -->
+          <path d="M212 280 L 212 286" stroke="var(--accent)" stroke-width="2"/>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Knees together</text>
+
+          <!-- arrow: top knee rotates open -->
+          <path d="M288 250 C 316 240, 328 218, 322 198" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M322 198 L 319 211 M322 198 L 332 205" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B -->
+          <line x1="356" y1="286" x2="586" y2="286" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <ellipse cx="498" cy="220" rx="17" ry="13" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="376" cy="200" r="20" fill="var(--bg-card)"/>
+            <path d="M396 212 L 492 222"/>
+            <path d="M400 216 L 414 278"/>
+            <!-- bottom leg stays down -->
+            <path d="M492 222 L 552 256 L 512 278"/>
+          </g>
+          <!-- top leg opens upward, feet stay together -->
+          <path d="M492 222 L 548 206 L 514 274" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- band stretched between the thighs -->
+          <path d="M521 241 L 518 213" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <text x="470" y="308" text-anchor="middle" class="pose-caption">Top knee opens</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">15</span></div>
+        <div><span class="dl">Sets</span><span class="dv">3</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Lie on your side with both knees bent.</li>
+          <li>Place a band around your thighs, just above the knees.</li>
+          <li>Draw your belly button inwards to engage your deep abdominal muscles.</li>
+          <li>Keeping your feet together, lift them a few inches off the floor.</li>
+          <li>Open your knees like a clam, hold, then return to the start.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>If it's too tough, drop the band entirely or lengthen it. Keep your hips stacked — don't let your top hip roll backwards to cheat the movement.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/nku9lDup5hs" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 2. Bird Dog Quadruped with Hip Abduction Band -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Core</span>
+          <span class="tag">Hips</span>
+          <span class="tag">Glutes</span>
+          <span class="tag">Shoulders</span>
+          <span class="tag equip">Resistance band</span>
+        </div>
+        <h3><span class="num">02</span> Bird Dog Quadruped with Hip Abduction Band</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Viewed from above: on all fours with knees hovering, then moving one hip outwards against the band">
+          <!-- POSE A: top-down, all fours -->
+          <rect x="80" y="72" width="150" height="216" rx="5" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 6"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="152" cy="98" r="18" fill="var(--bg-card)"/>
+            <!-- shoulders -->
+            <path d="M122 134 L 182 134"/>
+            <!-- spine -->
+            <path d="M152 134 L 152 200"/>
+            <!-- hips -->
+            <path d="M128 200 L 176 200"/>
+            <!-- arms out to hands -->
+            <path d="M122 134 L 108 178"/>
+            <path d="M182 134 L 196 178"/>
+            <!-- legs down to knees and feet -->
+            <path d="M128 200 L 124 246 L 122 272"/>
+            <path d="M176 200 L 180 246 L 182 272"/>
+          </g>
+          <!-- band across the thighs -->
+          <path d="M132 226 L 172 226" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <text x="152" y="308" text-anchor="middle" class="pose-caption">All fours, from above</text>
+
+          <!-- arrow -->
+          <path d="M258 196 C 294 188, 310 202, 304 220" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M304 220 L 303 207 M304 220 L 315 215" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: one hip travels outward -->
+          <rect x="392" y="72" width="164" height="216" rx="5" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 6"/>
+          <ellipse cx="482" cy="200" rx="17" ry="13" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="450" cy="98" r="18" fill="var(--bg-card)"/>
+            <path d="M420 134 L 480 134"/>
+            <path d="M450 134 L 450 200"/>
+            <path d="M426 200 L 474 200"/>
+            <path d="M420 134 L 406 178"/>
+            <path d="M480 134 L 494 178"/>
+            <!-- support leg stays put -->
+            <path d="M426 200 L 422 246 L 420 272"/>
+          </g>
+          <!-- working leg travels out to the side -->
+          <path d="M474 200 L 518 232 L 534 260" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- band stretched -->
+          <path d="M430 226 L 502 218" stroke="var(--accent-warm)" stroke-width="5" stroke-linecap="round"/>
+          <text x="466" y="308" text-anchor="middle" class="pose-caption">Hip out against band</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">15</span></div>
+        <div><span class="dl">Sets</span><span class="dv">3</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Go onto all fours with a band around your thighs.</li>
+          <li>Slightly lift your knees off the floor and hold them hovering.</li>
+          <li>Move one hip outwards against the band.</li>
+          <li>Return to the start position under control.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>This diagram is drawn looking down from above so you can see the hip travel. Keep your back flat and hips level — the movement comes from the hip, not from twisting your torso.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/tvpEi3SSe3c" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 3. Bird Dog One Leg -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Glutes</span>
+          <span class="tag">Core</span>
+          <span class="tag">Hips</span>
+          <span class="tag equip">Bodyweight</span>
+        </div>
+        <h3><span class="num">03</span> Bird Dog One Leg</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On all fours, bringing the knee forward and out to the side, then extending into a straight leg behind">
+          <!-- POSE A: knee forward, out to the side -->
+          <line x1="60" y1="284" x2="290" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="98" cy="188" r="19" fill="var(--bg-card)"/>
+            <!-- flat back -->
+            <path d="M118 196 L 216 200"/>
+            <!-- arms down -->
+            <path d="M120 198 L 112 280"/>
+            <!-- support leg: knee on floor -->
+            <path d="M216 200 L 222 280"/>
+            <path d="M222 280 L 254 284" stroke-width="5"/>
+            <!-- working leg: knee drawn forward and out -->
+            <path d="M216 200 L 186 244 L 216 264" stroke="var(--accent)"/>
+          </g>
+          <text x="170" y="308" text-anchor="middle" class="pose-caption">Knee forward &amp; out</text>
+
+          <!-- arrow -->
+          <path d="M312 180 C 344 172, 356 188, 348 206" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M348 206 L 348 193 M348 206 L 359 202" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: straight leg extended back -->
+          <line x1="372" y1="284" x2="590" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <!-- level reference line -->
+          <line x1="500" y1="198" x2="592" y2="198" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.55"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="404" cy="188" r="19" fill="var(--bg-card)"/>
+            <path d="M424 196 L 500 200"/>
+            <path d="M426 198 L 418 280"/>
+            <path d="M500 200 L 506 280"/>
+            <path d="M506 280 L 538 284" stroke-width="5"/>
+            <!-- straight leg back, level with torso -->
+            <path d="M500 200 L 588 202" stroke="var(--accent)"/>
+          </g>
+          <ellipse cx="508" cy="198" rx="17" ry="14" fill="var(--accent-soft)" stroke="none"/>
+          <text x="480" y="308" text-anchor="middle" class="pose-caption">Straight leg back</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">10–15</span></div>
+        <div><span class="dl">Then</span><span class="dv">Pulse × 15</span></div>
+        <div><span class="dl">Sides</span><span class="dv">Each side</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Position yourself on all fours, on the floor or your bed, with good posture.</li>
+          <li>Bring the knee forward, then lead with the knee out to the side (the "dog pee" position).</li>
+          <li>From there, extend into a straight leg behind you. Repeat for 10–15 reps.</li>
+          <li>Then hold the straight leg out, turn the foot outward, and pulse 15 times.</li>
+          <li>Repeat everything on the other side.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>Don't let your lower back arch as the leg goes back — the leg only needs to reach level with your torso, no higher.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/B5U4RvIUEpY" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 4. Bulgarian Split Squat -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Glutes</span>
+          <span class="tag">Quads</span>
+          <span class="tag">Single leg</span>
+          <span class="tag equip">Chair or bench</span>
+        </div>
+        <h3><span class="num">04</span> Bulgarian Split Squat</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rear foot elevated on a bench, lowering into a squat with the torso leaning forward">
+          <!-- POSE A -->
+          <line x1="50" y1="284" x2="290" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <!-- bench -->
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="196" y1="240" x2="262" y2="240"/>
+            <line x1="202" y1="240" x2="202" y2="282"/>
+            <line x1="258" y1="240" x2="258" y2="282"/>
+          </g>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- front leg -->
+            <path d="M152 160 L 140 220 L 136 278"/>
+            <path d="M136 278 L 114 282" stroke-width="5"/>
+            <!-- back leg to bench -->
+            <path d="M152 160 L 186 212 L 208 238"/>
+            <!-- torso -->
+            <path d="M152 160 L 152 96"/>
+            <path d="M152 100 L 148 152"/>
+            <circle cx="148" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Top</text>
+
+          <!-- arrow -->
+          <path d="M306 148 C 342 166, 342 192, 312 208" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M312 208 L 301 201 M312 208 L 308 220" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B -->
+          <line x1="360" y1="284" x2="590" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--muted)" stroke-width="3" fill="none" stroke-linecap="round">
+            <line x1="500" y1="240" x2="566" y2="240"/>
+            <line x1="506" y1="240" x2="506" y2="282"/>
+            <line x1="562" y1="240" x2="562" y2="282"/>
+          </g>
+          <!-- knee alignment line -->
+          <line x1="434" y1="216" x2="434" y2="282" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.55"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- front leg, knee over midfoot -->
+            <path d="M454 204 L 434 246 L 432 278"/>
+            <path d="M432 278 L 410 282" stroke-width="5"/>
+            <!-- back leg, knee dropped, foot on bench -->
+            <path d="M454 204 L 490 254 L 512 238"/>
+            <!-- torso leaning forward to bias glutes -->
+            <path d="M454 204 L 440 144"/>
+            <path d="M440 148 L 436 198"/>
+            <circle cx="435" cy="122" r="21" fill="var(--bg-card)"/>
+          </g>
+          <ellipse cx="460" cy="208" rx="17" ry="14" fill="var(--accent-soft)" stroke="none"/>
+          <text x="466" y="308" text-anchor="middle" class="pose-caption">Bottom</text>
+        </svg>
+      </div>
+
+      <div class="dose">
+        <div><span class="dl">Reps</span><span class="dv">10–12 each side</span></div>
+        <div><span class="dl">Sets</span><span class="dv">2–3</span></div>
+        <div><span class="dl">Load</span><span class="dv">Bodyweight</span></div>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Place one foot on a chair or bench behind you, the other flat on the floor.</li>
+          <li>Lean your body slightly forward to bias the glutes.</li>
+          <li>Go into a squat by bending your front knee as far as is comfortable.</li>
+          <li>Keep that knee in line with the middle of your foot — no drifting inwards or outwards.</li>
+          <li>Straighten your leg to return to the start position.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>The forward lean is what shifts the work from quads to glutes. Staying bolt upright turns this back into a quad exercise.</p>
+        </div>
+        <a class="watch" href="http://youtu.be/4OkVrtcvbC0" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 5. Romanian Deadlift -->
+    <article class="card" id="rdl">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Hamstrings</span>
+          <span class="tag">Glutes</span>
+          <span class="tag">Lower back</span>
+          <span class="tag equip">Barbell</span>
+        </div>
+        <h3><span class="num">05</span> Romanian Deadlift (RDL)</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing tall with a barbell, then pushing the hips back and hinging forward to shin level">
+          <!-- POSE A -->
+          <line x1="70" y1="284" x2="230" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <line x1="150" y1="160" x2="150" y2="280" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.5"/>
+          <ellipse cx="156" cy="195" rx="16" ry="42" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M150 160 L 147 222 L 150 278"/>
+            <path d="M150 278 L 128 282" stroke-width="5"/>
+            <path d="M150 160 L 147 96"/>
+            <circle cx="146" cy="90" r="4" fill="var(--ink)" stroke="none"/>
+            <path d="M147 96 L 136 172"/>
+            <circle cx="134" cy="176" r="13" fill="var(--bg-card)" stroke-width="4"/>
+            <circle cx="141" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Start</text>
+
+          <!-- arrow -->
+          <path d="M254 150 C 292 165, 292 185, 262 200" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M262 200 L 250 194 M262 200 L 258 212" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B -->
+          <line x1="370" y1="284" x2="530" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <line x1="450" y1="160" x2="450" y2="280" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.5"/>
+          <ellipse cx="472" cy="199" rx="16" ry="45" fill="var(--accent-soft)" stroke="none" transform="rotate(-36 472 199)"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M450 278 L 447 222 L 485 168"/>
+            <path d="M450 278 L 428 282" stroke-width="5"/>
+            <path d="M485 168 L 423 128"/>
+            <circle cx="423" cy="128" r="4" fill="var(--ink)" stroke="none"/>
+            <path d="M423 128 L 430 248"/>
+            <circle cx="430" cy="248" r="13" fill="var(--bg-card)" stroke-width="4"/>
+            <circle cx="402" cy="115" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="450" y="308" text-anchor="middle" class="pose-caption">Hinged</text>
+        </svg>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Grip the bar and stand tall, bar against the front of your thighs.</li>
+          <li>Push your hips back, keeping the bar close to your body throughout the descent.</li>
+          <li>Keep a straight back while hinging at the hips.</li>
+          <li>Lower the bar to shin level.</li>
+          <li>Stand up tall by pushing your hips forward and engaging the glutes.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>This is a hip hinge, not a squat — your knees stay almost still. If the bar drifts away from your legs, you've turned it into a back exercise.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/R2Ag30fhxa8" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 6. Single Leg Kettlebell Deadlift -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Hamstrings</span>
+          <span class="tag">Glutes</span>
+          <span class="tag">Balance</span>
+          <span class="tag equip">Kettlebell</span>
+        </div>
+        <h3><span class="num">06</span> Single Leg Kettlebell Deadlift</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balancing on one foot holding a kettlebell, then hinging at the hip as the free leg extends behind">
+          <!-- POSE A -->
+          <line x1="70" y1="284" x2="240" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- free leg, slightly bent behind -->
+            <path d="M150 160 L 166 218 L 172 266" stroke="var(--muted)" stroke-width="3.5"/>
+            <!-- standing leg -->
+            <path d="M150 160 L 147 222 L 150 278"/>
+            <path d="M150 278 L 128 282" stroke-width="5"/>
+            <path d="M150 160 L 147 96"/>
+            <circle cx="146" cy="90" r="4" fill="var(--ink)" stroke="none"/>
+            <path d="M147 96 L 137 170"/>
+            <circle cx="141" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <!-- kettlebell -->
+          <path d="M131 172 A 6 6 0 0 1 143 172" fill="none" stroke="var(--ink)" stroke-width="3"/>
+          <circle cx="137" cy="186" r="12" fill="var(--bg-card)" stroke="var(--ink)" stroke-width="4"/>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Balance on one foot</text>
+
+          <!-- arrow -->
+          <path d="M262 150 C 300 165, 300 185, 270 200" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M270 200 L 258 194 M270 200 L 266 212" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: T position -->
+          <line x1="380" y1="284" x2="580" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <ellipse cx="474" cy="212" rx="14" ry="34" fill="var(--accent-soft)" stroke="none" transform="rotate(6 474 212)"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- standing leg -->
+            <path d="M470 182 L 466 230 L 462 278"/>
+            <path d="M462 278 L 440 282" stroke-width="5"/>
+            <!-- torso forward -->
+            <path d="M470 182 L 410 170"/>
+            <circle cx="410" cy="170" r="4" fill="var(--ink)" stroke="none"/>
+            <!-- free leg extended straight back -->
+            <path d="M470 182 L 520 190 L 568 198" stroke="var(--muted)" stroke-width="4"/>
+            <path d="M568 198 L 574 186" stroke="var(--muted)" stroke-width="5"/>
+            <!-- arm hanging -->
+            <path d="M410 170 L 418 234"/>
+            <circle cx="390" cy="160" r="20" fill="var(--bg-card)"/>
+          </g>
+          <path d="M412 236 A 6 6 0 0 1 424 236" fill="none" stroke="var(--ink)" stroke-width="3"/>
+          <circle cx="418" cy="250" r="12" fill="var(--bg-card)" stroke="var(--ink)" stroke-width="4"/>
+          <text x="470" y="308" text-anchor="middle" class="pose-caption">Hinged, leg extended</text>
+        </svg>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Set up with your feet shoulder-width apart, one hand on the kettlebell in an overhand grip.</li>
+          <li>Balance on one foot.</li>
+          <li>Hinge at the hip, keeping the kettlebell close to your body throughout the descent.</li>
+          <li>Keep a straight back and lower the kettlebell to shin level.</li>
+          <li>Stand up by pushing your hips forward and engaging the glutes.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>Your body and the free leg should form one straight line from head to heel. If you wobble, slow down rather than shortening the range.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/TCAsn966t_s" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+
+    <!-- 7. Eccentric Hamstring Curl -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Hamstrings</span>
+          <span class="tag">Knee rehab</span>
+          <span class="tag equip">Floor / mat</span>
+        </div>
+        <h3><span class="num">07</span> Eccentric Hamstring Curl, Double-Leg Supine</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 180 600 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lying on your back with knees bent, dragging the heels along the floor towards your buttocks">
+          <!-- POSE A -->
+          <line x1="40" y1="278" x2="285" y2="278" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="66" cy="252" r="20" fill="var(--bg-card)"/>
+            <path d="M88 258 L 176 258"/>
+            <path d="M96 262 L 150 268"/>
+            <path d="M176 258 L 212 204 L 250 266"/>
+          </g>
+          <!-- heel push arrow -->
+          <path d="M250 250 L 250 268" stroke="var(--accent-warm)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M250 268 L 245 259 M250 268 L 255 259" stroke="var(--accent-warm)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="160" y="304" text-anchor="middle" class="pose-caption">Knees bent</text>
+
+          <!-- arrow -->
+          <path d="M302 220 C 334 208, 344 224, 336 240" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M336 240 L 336 227 M336 240 L 347 236" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B: heels dragged closer -->
+          <line x1="358" y1="278" x2="590" y2="278" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <ellipse cx="500" cy="230" rx="11" ry="32" fill="var(--accent-soft)" stroke="none" transform="rotate(-20 500 230)"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle cx="384" cy="252" r="20" fill="var(--bg-card)"/>
+            <path d="M406 258 L 494 258"/>
+            <path d="M414 262 L 468 268"/>
+            <path d="M494 258 L 516 196 L 539 266"/>
+          </g>
+          <!-- drag direction -->
+          <path d="M580 272 L 554 272" stroke="var(--accent-warm)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+          <path d="M554 272 L 563 267 M554 272 L 563 277" stroke="var(--accent-warm)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="480" y="304" text-anchor="middle" class="pose-caption">Heels dragged in</text>
+        </svg>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Lie down on your back and bend both knees.</li>
+          <li>Push your heels down into the floor.</li>
+          <li>Drag your heels along the floor towards your buttocks, keeping that downward pressure.</li>
+          <li>Return to the start under control.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>The downward heel pressure is what creates the contraction in the back of your thighs. Without it, your legs just slide and the hamstrings do nothing.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/HP690LO1TbI" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ GLUTES ============ -->
+  <section id="glutes">
+    <div class="sec-head">
+      <h2>Glutes Strengthening</h2>
+      <span class="count">2 exercises</span>
+    </div>
+
+    <!-- 1. Wide Stance Hack Squat -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Glutes</span>
+          <span class="tag">Quads</span>
+          <span class="tag">Adductors</span>
+          <span class="tag equip">Hack squat machine</span>
+        </div>
+        <h3><span class="num">01</span> Wide Stance Hack Squat</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Front view: standing with a wide stance, then lowering until the thighs are parallel">
+          <!-- POSE A -->
+          <line x1="40" y1="284" x2="260" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <ellipse cx="148" cy="168" rx="26" ry="20" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M118 156 L74 224 L64 278"/>
+            <path d="M178 156 L222 224 L232 278"/>
+            <path d="M64 278 L44 282" stroke-width="5"/>
+            <path d="M232 278 L252 282" stroke-width="5"/>
+            <path d="M118 156 L178 156"/>
+            <path d="M148 156 L150 92"/>
+            <path d="M118 96 L182 96"/>
+            <path d="M120 96 L104 138"/>
+            <path d="M180 96 L196 138"/>
+            <circle cx="150" cy="70" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="148" y="308" text-anchor="middle" class="pose-caption">Start</text>
+
+          <!-- arrow -->
+          <path d="M262 130 C 300 150, 300 180, 270 195" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M270 195 L 258 187 M270 195 L 264 207" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- POSE B -->
+          <line x1="340" y1="284" x2="560" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <line x1="352" y1="238" x2="548" y2="238" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.55"/>
+          <ellipse cx="440" cy="222" rx="30" ry="22" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M410 196 L 358 240 L 372 278"/>
+            <path d="M470 196 L 522 240 L 508 278"/>
+            <path d="M372 278 L 352 282" stroke-width="5"/>
+            <path d="M508 278 L 528 282" stroke-width="5"/>
+            <path d="M410 196 L 470 196"/>
+            <path d="M440 196 L 436 148"/>
+            <path d="M406 152 L 466 152"/>
+            <path d="M408 152 L 394 190"/>
+            <path d="M464 152 L 480 190"/>
+            <circle cx="436" cy="126" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="440" y="308" text-anchor="middle" class="pose-caption">Bottom</text>
+        </svg>
+      </div>
+
+      <div class="body-copy">
+        <ol class="steps">
+          <li>Set your shoulders under the pads with your back flat against the support.</li>
+          <li>Place your feet wide on the platform, toes turned slightly outward.</li>
+          <li>Unrack the weight and lower under control, letting your knees track over your toes.</li>
+          <li>Descend until your thighs are at least parallel to the platform.</li>
+          <li>Drive through your heels and outer feet to press back up to the start.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>The wider your stance, the more load shifts onto your glutes and inner thighs. Don't let your knees cave inward as you press up.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. RDLs -->
+    <article class="card">
+      <div class="card-head">
+        <div class="tags">
+          <span class="tag">Glutes</span>
+          <span class="tag">Hamstrings</span>
+          <span class="tag equip">Barbell</span>
+        </div>
+        <h3><span class="num">02</span> RDLs</h3>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing tall with a barbell, then pushing the hips back and hinging forward to shin level">
+          <line x1="70" y1="284" x2="230" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <line x1="150" y1="160" x2="150" y2="280" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.5"/>
+          <ellipse cx="156" cy="195" rx="16" ry="42" fill="var(--accent-soft)" stroke="none"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M150 160 L 147 222 L 150 278"/>
+            <path d="M150 278 L 128 282" stroke-width="5"/>
+            <path d="M150 160 L 147 96"/>
+            <circle cx="146" cy="90" r="4" fill="var(--ink)" stroke="none"/>
+            <path d="M147 96 L 136 172"/>
+            <circle cx="134" cy="176" r="13" fill="var(--bg-card)" stroke-width="4"/>
+            <circle cx="141" cy="72" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="150" y="308" text-anchor="middle" class="pose-caption">Start</text>
+
+          <path d="M254 150 C 292 165, 292 185, 262 200" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M262 200 L 250 194 M262 200 L 258 212" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <line x1="370" y1="284" x2="530" y2="284" stroke="var(--muted)" stroke-width="3" stroke-dasharray="1 8"/>
+          <line x1="450" y1="160" x2="450" y2="280" stroke="var(--accent-warm)" stroke-width="2" stroke-dasharray="4 5" opacity="0.5"/>
+          <ellipse cx="472" cy="199" rx="16" ry="45" fill="var(--accent-soft)" stroke="none" transform="rotate(-36 472 199)"/>
+          <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M450 278 L 447 222 L 485 168"/>
+            <path d="M450 278 L 428 282" stroke-width="5"/>
+            <path d="M485 168 L 423 128"/>
+            <circle cx="423" cy="128" r="4" fill="var(--ink)" stroke="none"/>
+            <path d="M423 128 L 430 248"/>
+            <circle cx="430" cy="248" r="13" fill="var(--bg-card)" stroke-width="4"/>
+            <circle cx="402" cy="115" r="21" fill="var(--bg-card)"/>
+          </g>
+          <text x="450" y="308" text-anchor="middle" class="pose-caption">Hinged</text>
+        </svg>
+      </div>
+
+      <div class="body-copy">
+        <p class="xref">Same movement as Hip Strengthening #05 — it appears in both sections of the plan.</p>
+        <ol class="steps">
+          <li>Grip the bar and stand tall, bar against the front of your thighs.</li>
+          <li>Push your hips back, keeping the bar close to your body throughout the descent.</li>
+          <li>Keep a straight back while hinging at the hips.</li>
+          <li>Lower the bar to shin level.</li>
+          <li>Stand up tall by pushing your hips forward and engaging the glutes.</li>
+        </ol>
+        <div class="tip">
+          <span class="tip-label">Cue</span>
+          <p>Squeeze the glutes hard at the top of every rep. That lockout is the part that makes this a glute exercise rather than just a hamstring stretch.</p>
+        </div>
+        <a class="watch" href="https://youtu.be/R2Ag30fhxa8" target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+          Watch the video
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ REST OF PLAN ============ -->
+  <section id="rest">
+    <div class="sec-head">
+      <h2>Rest of the Plan</h2>
+      <span class="count">No detail yet</span>
+    </div>
+
+    <div class="note-card">
+      <h4>Hip mobility — windscreen wipers</h4>
+      <p>Sent through with the hip flexor stretch routine. You'll recognise them from the session.</p>
+      <a class="watch" href="https://www.instagram.com/reel/DObsI2YksGr/?hl=en" target="_blank" rel="noopener">
+        <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12" fill="var(--accent)"/></svg>
+        Watch the reel
+      </a>
+    </div>
+
+    <div class="note-card">
+      <h4>Pull</h4>
+      <ul>
+        <li>Chest-to-bar pull ups</li>
+        <li>Bent over rows</li>
+      </ul>
+      <p>Listed in the plan without exercise detail. Send them over and I'll add full cards.</p>
+    </div>
+
+    <div class="note-card">
+      <h4>Still to be filled in</h4>
+      <ul>
+        <li>Quality sleep</li>
+        <li>Shoulder mobility</li>
+        <li>Core exercises — not ab exercises</li>
+        <li>Push</li>
+      </ul>
+      <p>These are named as focus areas but have no exercises attached yet.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <span>August '26 Gym Plan</span>
+    <span>12 exercises</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
